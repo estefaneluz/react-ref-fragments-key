@@ -1,4 +1,5 @@
 import './App.css';
+import Prato from './components/Prato'
 import {useState} from 'react'
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
     <div className="App">
       <h1>Cardápio</h1>
       <ul>
-
+        <Prato/>
       </ul>
     </div>
   );
