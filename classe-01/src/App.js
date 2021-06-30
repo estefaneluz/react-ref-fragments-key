@@ -3,7 +3,7 @@ import Prato from './components/Prato'
 import {useState} from 'react'
 
 function App() {
-  const [quantidade, setQuantidade] = useState();
+  const [quantidade, setQuantidade] = useState({});
   const cardapio = [
   {
     nome: "Moqueca",
@@ -22,7 +22,18 @@ function App() {
     <div className="App">
       <h1>Cardápio</h1>
       <ul>
-        <Prato/>
+        {
+        cardapio.map(prato => {
+          return( 
+          <li key={prato.nome}>
+            <Prato 
+            nome={prato.nome}
+            preco={prato.preco}
+            quantidade={0}
+            />
+          </li>)
+        })
+        }
       </ul>
     </div>
   );

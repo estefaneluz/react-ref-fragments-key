@@ -1,7 +1,7 @@
 function Prato({ nome, preco, quantidade }) {
   return (
     <>
-      <label name={nome}>Alo</label>
+      <label>{nome}</label>
       <br />
       <input type="number" min="0" name={nome} />
       <span> x {`R$ ${preco} = ${preco + quantidade}`}</span>
