@@ -1,5 +1,5 @@
 import "./App.css";
-import {useState, useRef, useEffect} from 'react'
+import {useState, useRef} from 'react'
 
 function App() {
   const [usuario, setUsuario] = useState("");
@@ -7,13 +7,6 @@ function App() {
   const inputUser = useRef();
   const inputPass = useRef();
 
-  useEffect(()=>{
-    if(!inputUser.current.value){
-      inputUser.current.focus();
-    } else if(!inputPass.current.value){
-      inputPass.current.focus();
-    }
-  }, [])
   return (
     <div className="app">
       <h1>Login</h1>
@@ -25,6 +18,8 @@ function App() {
             inputUser.current.focus();
           } else if(!inputPass.current.value){
             inputPass.current.focus();
+          } else {
+            alert("Você fez login com sucesso!");
           }
         }}
       >
