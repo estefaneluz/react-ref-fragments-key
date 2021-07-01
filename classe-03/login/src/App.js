@@ -6,7 +6,7 @@ function App() {
   const [senha, setSenha] = useState("");
 
   return (
-    <div>
+    <div className="app">
       <h1>Login</h1>
 
       <form
