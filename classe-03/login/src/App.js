@@ -8,15 +8,12 @@ function App() {
   const inputPass = useRef();
 
   useEffect(()=>{
-    if(!inputUser.current.value && !inputPass.current.value){
-      inputUser.current.focus();
-    } else if(!inputUser.current.value){
+    if(!inputUser.current.value){
       inputUser.current.focus();
     } else if(!inputPass.current.value){
       inputPass.current.focus();
     }
-
-  }, [usuario, senha])
+  }, [])
   return (
     <div className="app">
       <h1>Login</h1>
@@ -24,6 +21,11 @@ function App() {
       <form
         onSubmit={(ev) => {
           ev.preventDefault();
+          if(!inputUser.current.value){
+            inputUser.current.focus();
+          } else if(!inputPass.current.value){
+            inputPass.current.focus();
+          }
         }}
       >
         <label>
