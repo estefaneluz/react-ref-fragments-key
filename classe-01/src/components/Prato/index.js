@@ -1,10 +1,10 @@
-function Prato({ nome, preco, quantidade }) {
+function Prato({ nome, preco, quantidade, setQuantidade }) {
   return (
     <>
       <label>{nome}</label>
       <br />
-      <input type="number" min="0" name={nome} />
-      <span> x {`R$ ${preco} = ${preco + quantidade}`}</span>
+      <input type="number" min="0" name={nome} value={quantidade} onChange={e => setQuantidade(e.target.valueAsNumber)}/>
+      <span> x {`R$ ${preco} = ${preco * quantidade}`}</span>
     </>
   );
 }
