@@ -1,4 +1,5 @@
 import './App.css';
+import {useState} from 'react'
 
 const glossario = [
   {
@@ -26,18 +27,18 @@ function App() {
           <button>{mostrando ? "Fechar" : "Abrir"} menu</button>
 
           {mostrando && (
-              <div className="remover-div">
+              <>
                   <button>Adicionar entrada</button>
                   <button>Remover entrada</button>
-              </div>
+              </>
           )}
 
           <dl>
               {glossario.map(entrada => (
-                  <div className="remover-div">
+                  <>
                       <dt>{entrada.termo}</dt>
                       <dd>{entrada.definicao}</dd>
-                  </div>
+                  </>
               ))}
           </dl>
       </div>
