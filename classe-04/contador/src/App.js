@@ -1,19 +1,21 @@
 import "./App.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 function App() {
   const [count, setCount] = useState(0);
   const [step, setStep] = useState(1);
   const [delaySegundos, setDelaySegundos] = useState(1);
+  const callbackRef = useRef();
+  callbackRef.current = () => setCount(c => c + step);
 
   useEffect(() => {
     const intervalId = setInterval(
-      () => setCount((c) => c + step),
+      () => callbackRef.current(),
       delaySegundos * 1000
     );
 
     return () => clearInterval(intervalId);
-  }, []);
+  }, [delaySegundos]);
 
   return (
     <div className="app">
